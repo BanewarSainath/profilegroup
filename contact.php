@@ -115,7 +115,7 @@
   </form>
   <?php
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $name = $_POST['username'];
+        $name = $_POST['user'];
         $email = $_POST['email'];
 
         $phone = $_POST['phone'];
@@ -126,7 +126,7 @@
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $database = "trycontact";
+      $database = "contact";
 
       // Create a connection
       $conn = mysqli_connect($servername, $username, $password, $database);
@@ -137,7 +137,7 @@
       else{ 
         // Submit these to a database
         // Sql query to be executed 
-        $sql = "INSERT INTO `try_contact` (`name`, `email`, `phone`, `querie`) VALUES ('$name', '$email', '$phone', '$msg')";
+        $sql = "INSERT INTO `con` (`name`, `email`, `phone`, `querie`) VALUES ('$name', '$email', '$phone', '$msg')";
         $result = mysqli_query($conn, $sql);
  
         if($result){
